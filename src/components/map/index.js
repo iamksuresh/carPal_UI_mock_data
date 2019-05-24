@@ -88,8 +88,8 @@ const GoogleMap = (props) => {
         Api.Get('restaurants')
             .then(resp => {
                 //console.log('resp ', resp.data.result)
-                setRestaurantsList(resp) 
-                updateStates(resp)            
+                setRestaurantsList(resp.data.result) 
+                updateStates(resp.data.result)            
                 setLoading(false)
             },err => {
                 setLoading(false)
@@ -245,7 +245,7 @@ const GoogleMap = (props) => {
                     //setFavouritesList(resp.data.result)
                     dispatch({
                         type: 'update',
-                        favouritesList: resp
+                        favouritesList: resp.data.result
                     })
                 })
         }else{
@@ -264,7 +264,7 @@ const GoogleMap = (props) => {
                     //setFavouritesList(resp.data.result)
                     dispatch({
                         type: 'update',
-                        favouritesList: resp
+                        favouritesList: resp.data.result
                     })
                 })
         }

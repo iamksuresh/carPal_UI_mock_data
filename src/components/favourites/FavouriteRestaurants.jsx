@@ -39,7 +39,7 @@ const FavouriteRestaurants = (props) => {
             .then(resp => {
                 dispatch({
                     type: 'update',
-                    favouritesList: resp
+                    favouritesList: resp.data.result
                 }) 
                 setLoading(false)        
             },err => {
@@ -94,7 +94,7 @@ const FavouriteRestaurants = (props) => {
 
                 dispatch({
                     type: 'update',
-                    favouritesList: resp
+                    favouritesList: resp.data.result
                 })
             })
     }
@@ -110,7 +110,7 @@ const FavouriteRestaurants = (props) => {
                 //setFavouritesList(resp.data.result)
                 dispatch({
                     type: 'update',
-                    favouritesList: resp
+                    favouritesList: resp.data.result
                 })
             })
     }
